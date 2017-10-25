@@ -10,17 +10,15 @@
 
     Sample payload.json look like below:
     {
-        "cluster_name": "my-cluster",
-        "spark_version": "2.0.x-scala2.10",
+        "cluster_name": "mycluster-python3",
+        "num_workers": 1,
+        "spark_version": "3.3.x-scala2.11",
         "node_type_id": "r3.xlarge",
-        "spark_conf": {
-            "spark.speculation": true
-        },
-        "aws_attributes": {
-            "availability": "SPOT",
-            "zone_id": "us-west-2a"
-        },
-        "num_workers": 25
+        "custom_tags": {"stream": "incubation"},
+        "aws_attributes": {"instance_profile_arn": "arn:aws:iam::<YOURAWSACCOUNT>:instance-profile\/databricks-s3", "spot_bid_price_percent": "75"},
+        "spark_env_vars": {
+            "PYSPARK_PYTHON": "\/databricks\/python3\/bin\/python3"
+        }
     }
 """
 import json
