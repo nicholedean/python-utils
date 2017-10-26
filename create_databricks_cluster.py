@@ -14,6 +14,7 @@
         "num_workers": 1,
         "spark_version": "3.3.x-scala2.11",
         "node_type_id": "r3.xlarge",
+        "autotermination_minutes": 60,
         "custom_tags": {"stream": "incubation"},
         "aws_attributes": {"instance_profile_arn": "arn:aws:iam::<YOURAWSACCOUNT>:instance-profile\/databricks-s3", "spot_bid_price_percent": "75"},
         "spark_env_vars": {
